@@ -1,0 +1,30 @@
+{
+  hourlyRate: number,
+  taxRate: number,
+  goals: [
+    {
+      id: string,
+      name: string,
+      targetAmount: number,
+      amountSaved: number,
+      priority: number,
+      completedDate: string (ISO timestamp) | null,
+      hoursRequiredTotal: number,
+      hoursAccumulated: number
+    }
+  ],
+  completedGoals: [
+    {
+      id: string,
+      name: string,
+      completedDate: string,
+      totalHours: number,
+      totalMoney: number,
+    }
+  ],
+  stats: {
+    lifetimeHoursWorked: number,
+    lifetimeMoneyEarned: number,
+    lifetimeGoalsCompleted: number
+  }
+}
