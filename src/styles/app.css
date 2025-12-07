@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* 
 ==================
 DESKTOP (>= 992px)
@@ -13,15 +15,20 @@ html, body {
 
 .app-container {
     height: 100vh;
-    padding: 0;
+    padding: 0 !important;
     display: flex;
     flex-direction: column;
+    font-family: "Roboto", sans-serif;
 }
 
 .app-row {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .app-column {
@@ -32,7 +39,7 @@ html, body {
 }
 
 .column-left {
-    background-color: #f8f9fa;
+    background-color: #E09F3E;
 }
 
 .column-center {
@@ -40,11 +47,46 @@ html, body {
 }
 
 .column-right {
-    background-color: #f8f9fa;
+    background-color: #E09F3E;
 }
 
 .app-column .card {
     width: 100%;
+    height: auto;
+}
+
+@media (min-width: 992px) {
+    .app-row {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .column-left {
+        width: 20vw;
+        flex: 0 0 20vw !important;
+        justify-content: space-between;
+    }
+
+    .column-center {
+        width: 50vw;
+        flex: 0 0 50vw !important;
+    }
+
+    .column-right {
+        width: 30vw;
+        flex: 0 0 30vw !important;
+    }
+
+    .app-column {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow-y: auto;
+        padding: 1.75rem;
+        box-sizing: border-box;
+    }
 }
 
 /* 

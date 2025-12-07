@@ -69,19 +69,19 @@ export default function ExportImportPanel() {
     };
 
     return (
-        <Card className="mb-3">
+        <Card className="mb-0">
             <Card.Body>
-                <Card.Title>Backup / Restore</Card.Title>
+                <Card.Title className="mb-3">Backup / Restore</Card.Title>
 
                 {/* Export button. */}
-                <Button variant="secondary" className="me-2" onClick={handleExport}>
+                <Button variant="secondary" className="me-3" onClick={handleExport}>
                     Export JSON
                 </Button>
 
                 {/* Import button. */}
                 <Form.Label
                     htmlFor="import-json"
-                    className="btn btn-secondary me-2 mb-0"
+                    className="btn btn-secondary me-3 mb-0"
                 >
                     Import JSON
                 </Form.Label>

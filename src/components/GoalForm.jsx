@@ -30,7 +30,7 @@ export default function GoalForm() {
     };
 
     return (
-        <Card className="mb-3">
+        <Card className="mb-0">
             <Card.Body>
                 <Card.Title>Create New Goal</Card.Title>
 
