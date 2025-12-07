@@ -1,9 +1,7 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col } from 'react-bootstrap';
 
-import Header from './Header';
+import IncomePanel from './IncomePanel';
 import WorkEntryForm from './WorkEntryForm';
 import GoalForm from './GoalForm';
 import GoalList from './GoalList';
@@ -15,15 +13,15 @@ export default function Layout() {
     return (
         <Container fluid className="app-container">
             <Row className="h-100 app-row">
-                <Col className="app-column column-left p-4">
-                    <Header />
+                <Col className="app-column column-left p-4 border-end">
+                    <IncomePanel />
                     <WorkEntryForm />
                     <GoalForm />
                 </Col>
                 <Col className="app-column column-center p-4">
                     <GoalList />
                 </Col>
-                <Col className="app-column column-right p-4">
+                <Col className="app-column column-right p-4 border-start">
                     <CompletedGoals />
                     <StatsPanel />
                     <ExImPanel />

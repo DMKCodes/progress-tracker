@@ -56,7 +56,7 @@ export default function GoalForm() {
                         />
                     </Form.Group>
 
-                    <Button type="submit" variant="success">
+                    <Button type="submit" variant="primary">
                         Add Goal
                     </Button>
                 </Form>

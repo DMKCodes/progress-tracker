@@ -69,35 +69,38 @@ export default function ExportImportPanel() {
     };
 
     return (
-        <Card className="mb-0">
-            <Card.Body>
-                <Card.Title className="mb-3">Backup / Restore</Card.Title>
+        <>
+            <h3>Export/Import Data</h3>
+            <Card className="mb-0">
+                <Card.Body>
+                    <Card.Title className="mb-3">Backup / Restore</Card.Title>
 
-                {/* Export button. */}
-                <Button variant="secondary" className="me-3" onClick={handleExport}>
-                    Export JSON
-                </Button>
+                    {/* Export button. */}
+                    <Button variant="secondary" className="me-3" onClick={handleExport}>
+                        Export JSON
+                    </Button>
 
-                {/* Import button. */}
-                <Form.Label
-                    htmlFor="import-json"
-                    className="btn btn-secondary me-3 mb-0"
-                >
-                    Import JSON
-                </Form.Label>
-                <Form.Control
-                    id="import-json"
-                    type="file"
-                    accept="application/json"
-                    style={{ display: 'none' }}
-                    onChange={handleImport}
-                />
+                    {/* Import button. */}
+                    <Form.Label
+                        htmlFor="import-json"
+                        className="btn btn-secondary me-3 mb-0"
+                    >
+                        Import JSON
+                    </Form.Label>
+                    <Form.Control
+                        id="import-json"
+                        type="file"
+                        accept="application/json"
+                        style={{ display: 'none' }}
+                        onChange={handleImport}
+                    />
 
-                {/* Reset button. */}
-                <Button variant="danger" onClick={handleReset}>
-                    Reset All Data
-                </Button>
-            </Card.Body>
-        </Card>
+                    {/* Reset button. */}
+                    <Button variant="danger" onClick={handleReset}>
+                        Reset All Data
+                    </Button>
+                </Card.Body>
+            </Card>
+        </>
     );
 };

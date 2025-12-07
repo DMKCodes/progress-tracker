@@ -15,36 +15,39 @@ export default function CompletedGoals() {
     const completedGoals = useStore(state => state.completedGoals);
 
     return (
-        <Card className="mb-3">
-            <Card.Body>
-                <Card.Title>Completed Goals</Card.Title>
+        <>
+            <h3>History</h3>
+            <Card className="mb-3">
+                <Card.Body>
+                    <Card.Title>Completed Goals</Card.Title>
 
-                {completedGoals.length === 0 ? (
-                    <div style={{ color: '#555' }}>No goals completed. Keep going!</div>
-                ) : (
-                    <Table striped bordered hover size="sm">
-                        <thead>
-                            <tr>
-                                <th>Goal Name</th>
-                                <th>Date Completed</th>
-                                <th>Total Hours</th>
-                                <th>Total Money</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {completedGoals.map(goal => (
-                                <tr key={goal.id}>
-                                    <td>{goal.name}</td>
-                                    <td>{format(new Date(goal.completedDate), 'yyyy-MM-dd')}</td>
-                                    <td>{goal.totalHours.toFixed(2)}</td>
-                                    <td>${goal.totalMoney.toFixed(2)}</td>
+                    {completedGoals.length === 0 ? (
+                        <div style={{ color: '#555' }}>No goals completed. Keep going!</div>
+                    ) : (
+                        <Table striped bordered hover size="sm">
+                            <thead>
+                                <tr>
+                                    <th>Goal Name</th>
+                                    <th>Date Completed</th>
+                                    <th>Total Hours</th>
+                                    <th>Total Money</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </Table>
-                )}
-            </Card.Body>
-        </Card>
+                            </thead>
+
+                            <tbody>
+                                {completedGoals.map(goal => (
+                                    <tr key={goal.id}>
+                                        <td>{goal.name}</td>
+                                        <td>{format(new Date(goal.completedDate), 'yyyy-MM-dd')}</td>
+                                        <td>{goal.totalHours.toFixed(2)}</td>
+                                        <td>${goal.totalMoney.toFixed(2)}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </Table>
+                    )}
+                </Card.Body>
+            </Card>
+        </>
     );
 };

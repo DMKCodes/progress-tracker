@@ -6,15 +6,8 @@
 //   - calling reorderGoals() from the store
 
 import React from 'react';
-import {
-    DndContext,
-    closestCenter,
-} from '@dnd-kit/core';
-import {
-    SortableContext,
-    verticalListSortingStrategy,
-    arrayMove,
-} from '@dnd-kit/sortable';
+import { DndContext, closestCenter } from '@dnd-kit/core';
+import { SortableContext, verticalListSortingStrategy, arrayMove } from '@dnd-kit/sortable';
 import { useStore } from '../store/useStore';
 import { computeCumulativeHours, computeNetHourly } from '../utils/calculations';
 import GoalItem from './GoalItem';
@@ -60,22 +53,25 @@ export default function GoalList() {
     };
 
     return (
-        <DndContext
-            collisionDetection={closestCenter}
-            onDragEnd={handleDragEnd}
-        >
-            <SortableContext
-                items={goalIds}
-                strategy={verticalListSortingStrategy}
+        <>
+            <h3>Current Goals</h3>
+            <DndContext
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd}
             >
-                {sortedGoals.map((goal, idx) => (
-                    <GoalItem
-                        key={goal.id}
-                        goal={goal}
-                        cumulativeHours={cumulativeHoursArr[idx]}
-                    />
-                ))}
-            </SortableContext>
-        </DndContext>
+                <SortableContext
+                    items={goalIds}
+                    strategy={verticalListSortingStrategy}
+                >
+                    {sortedGoals.map((goal, idx) => (
+                        <GoalItem
+                            key={goal.id}
+                            goal={goal}
+                            cumulativeHours={cumulativeHoursArr[idx]}
+                        />
+                    ))}
+                </SortableContext>
+            </DndContext>
+        </>
     );
 };
